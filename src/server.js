@@ -6,9 +6,12 @@ const app = express();
 app.set('port', process.env.PORT || 3000 );
 
 //Routes
-app.get('/', (req, res)=> res.send('hola mundo desde servidor'));
 
+import IndexRoutes from "./routes/index.routes";
+import IdeaRoutes from "./routes/idea.routes";
+//apliccion de las rutas
 
-
+app.use(IndexRoutes);
+app.use('/idea', IdeaRoutes); 
 
 export default app;
