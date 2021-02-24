@@ -17,7 +17,19 @@ res.send(result);
 
 router.post('/', async(req,res)=>{
 const db =    await connect();
-res.send('creaste un dato')
+
+const ideasingular = {
+
+    tittle: req.body.tittle,
+    description: req.body.description
+
+};
+
+const result = await db.collection('ideas').insertOne(ideasingular);
+
+console.log(result);
+
+res.json('creaste un dato');
 });
 
 

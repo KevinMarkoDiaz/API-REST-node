@@ -1,9 +1,14 @@
-import express from 'express';
+import express, {json} from 'express';
 
 const app = express();
 
 //Settings
 app.set('port', process.env.PORT || 3000 );
+
+
+//middleweares
+
+app.use(json());
 
 //Routes
 
